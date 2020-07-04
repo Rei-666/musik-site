@@ -44,7 +44,7 @@ button:focus{
 }
 .candidat{
   height: 100vh;
-  background-image: linear-gradient(180deg, rgba(14, 10, 56, 0.88) 2.56%, rgba(171, 169, 251, 0.51) 102.56%), url("/img/tlo.jpg");
+  background-image: linear-gradient(180deg, rgba(14, 10, 56, 0.88) 2.56%, rgba(171, 169, 251, 0.51) 102.56%), url("img/tlo.jpg");
   background-position: center;;
   background-repeat: no-repeat;
   background-size: cover;
