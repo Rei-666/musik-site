@@ -66,9 +66,9 @@ button:focus{
   background-color: white;
   width: 80vw;
   height: auto;
-  font-family: Segoe UI;
+  font-family: Poppins;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 4em;
   text-align: center;
   padding: 15px;
@@ -93,7 +93,7 @@ button:focus{
   margin-top: 7vh;
   background-color: #651572;
   border-radius: 40px;
-  font-family: Segoe UI;
+  font-family: Poppins;
   font-style: normal;
   font-weight: 700;
   font-size: 3em;
