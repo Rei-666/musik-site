@@ -5,14 +5,20 @@ h1
 {
   margin: 0;
 }
+button:focus{
+  outline: none;
+  border: none;
+}
 .container{
   background-color: #000000;
   height: 100vh;
   width: 100%;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .container__title{
-  align-self: center;
+  margin-bottom: 5vh;
   color: white;
   font-size: 6em;
   text-align: center;
@@ -24,11 +30,81 @@ h1
 
 }
 .container__scrolldown{
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  bottom: 4vh;
+  left: 50%;
+  transform: translate(-50%, 0);
   background-color: transparent;
   border: none;
 }
+
 .container__scrolldownimage{
-  height: 15vw;
+  height: 20vw;
+  cursor: pointer;
+}
+.candidat{
+  height: 100vh;
+  background-image: linear-gradient(180deg, rgba(14, 10, 56, 0.88) 2.56%, rgba(171, 169, 251, 0.51) 102.56%), url("/img/tło.jpg");
+  background-position: center;;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidat__image{
+  align-self: center;
+  margin-top: 5vh;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  border: 25px solid white;
+}
+.candidat__title{
+  margin-top: 2vh;
+  align-self: center;
+  background-color: white;
+  width: 80vw;
+  height: auto;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 4em;
+  text-align: center;
+  padding: 15px;
+  border-radius: 20px;
+}
+.candidat__subtitle{
+  background-color: white;
+  width: 80vw;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 3.8em;
+  align-self: center;
+  text-align: center;
+  padding: 15px;
+  margin-top: 3vh;
+  border-radius: 20px;
+}
+.candidat__actionbutton{
+  width: 80vw;
+  align-self: center;
+  margin-top: 7vh;
+  background-color: #651572;
+  border-radius: 40px;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3em;
+  letter-spacing: 6px;;
+  padding: 10px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  text-transform: uppercase;
+  color: #FFE8FA;
+  border: none;
+}
+.candidat__actionbutton:active{
+  background-color: #bd4ece;
 }
