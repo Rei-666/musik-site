@@ -51,12 +51,17 @@ button:focus{
   display: flex;
   flex-direction: column;
 }
-
 .candidat__image{
+  width: 70vw;
+  align-self: center;;
+}
+
+.image__source{
+  display: block;
   align-self: center;
   margin-top: 5vh;
-  width: 70vw;
   height: 70vw;
+  width: auto;
   border-radius: 50%;
   border: 25px solid white;
 }
