@@ -3,6 +3,9 @@ html, body{
   width: 100%;
   font-size: 10px;
 }
+.body--noscroll{
+  overflow: hidden;
+}
 h1
 {
   margin: 0;
@@ -51,9 +54,6 @@ button:focus{
   background-position: center;;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.form{
-  display: none;
 }
 .candidat{
   min-height: 100vh;
@@ -125,6 +125,32 @@ button:focus{
 .candidat__actionbutton:active{
   background-color: #bd4ece;
 }
+.form{
+  background-color: #D7D7D7FA;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+.form__text-input{
+  display: block;
+  font-size: 2em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.form__x-button{
+  cursor: pointer;
+}
+.form--hidden{
+  display: none;
+}
+.from--shown{
+  display: flex;
+}
 
 
 
@@ -159,8 +185,19 @@ button:focus{
     font-size: 1.5em;
   }
   .form{
-    background-color: #D7D7D7CC;
-    display: block;
+    display: flex;
+    position: static;
     grid-column: 4 / 6;
   }
+  .form__x-button{
+    display: none;
+  }
+  
+
+
+  
+}
+.magictime {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
 }
