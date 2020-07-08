@@ -43,6 +43,7 @@ button:focus{
 
 .container__scrolldownimage{
   height: 20vw;
+  max-height: 100px;
   cursor: pointer;
 }
 .join-us{
@@ -60,19 +61,18 @@ button:focus{
   flex-direction: column;
 }
 .candidat__image{
-  width: 70vw;
+  display: flex;
+  justify-content: center;;
   align-self: center;
   align-content: center;
 }
 
 .candidat__image-source{
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   align-self: center;
   margin-top: 3vh;
   height: 60vw;
-  width: auto;
+  width: 60vw;
   border-radius: 50%;
   border: 5vw solid white;
 }
@@ -90,7 +90,7 @@ button:focus{
   padding: 15px;
   border-radius: 20px;
 }
-.candidat__subtitle{
+.candidat__title--subtitle{
   background-color: white;
   width: 80vw;
   font-family: Poppins;
@@ -131,28 +131,36 @@ button:focus{
 @media only screen and (min-width: 768px) {
   .join-us{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .candidat{
+    grid-column: 1 / 4;
   }
   .candidat__image{
-    height: 50vw;
+    box-sizing: border-box;
+    width: 50%;
+    object-fit: cover;
   }
   .candidat__image-source{
-    height: 44vw;
-    border: 3vw solid white;
+    width: 100%;
+    height: auto;
+    border: 30px solid white;
   }
   .candidat__title{
     margin-top: 6vh;
-    width: 60vw;
+    width: 40%;
   }
-  .candidat__subtitle{
-    width: 60vw;
+  .candidat__title--subtitle{
+    width: 40vw;
   }
   .candidat__actionbutton{
     margin-top: 3vh;
-    width: 50vw;
+    width: auto;
+    font-size: 1.5em;
   }
   .form{
+    background-color: #D7D7D7CC;
     display: block;
-
+    grid-column: 4 / 6;
   }
 }
