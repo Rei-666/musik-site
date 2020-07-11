@@ -91,19 +91,11 @@ button:focus{
   border-radius: 20px;
 }
 .candidat__title--subtitle{
-  background-color: white;
-  width: 80vw;
-  font-family: Poppins;
-  font-style: normal;
   font-weight: 300;
-  font-size: 2em;
-  align-self: center;
-  text-align: center;
-  padding: 15px;
+  font-size: 2.3em;
   margin-top: 3vh;
-  border-radius: 20px;
 }
-.candidat__actionbutton{
+.button{
   width: 80vw;
   align-self: center;
   margin-top: 7vh;
@@ -121,29 +113,57 @@ button:focus{
   text-transform: uppercase;
   color: #FFE8FA;
   border: none;
+  cursor: pointer;
 }
-.candidat__actionbutton:active{
+.button:active{
   background-color: #bd4ece;
+}
+.button--form{
+  width: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 60px;
 }
 .form{
   background-color: #D7D7D7FA;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  align-content: center;;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
 }
-.form__text-input{
+.form > form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form label{
+  align-self: center;
   display: block;
-  font-size: 2em;
+  margin-top: 15px;
+  font-size: 2rem;
+  font-family: Poppins;
+}
+.form__text-input{
+  font-size: 1.1em;
+  font-family: Poppins;
+  font-weight: lighter;
+  display: block;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
+}
+.form__text-input:focus{
+  outline: none;
 }
 .form__x-button{
   cursor: pointer;
+  align-self: flex-end;
+  margin: 15px;
 }
 .form--hidden{
   display: none;
@@ -151,7 +171,12 @@ button:focus{
 .from--shown{
   display: flex;
 }
-
+.email--error:after{
+  color: red;
+  font-weight: lighter;
+  font-size: 1em;
+  content: "Niepoprawny adres email.";
+}
 
 
 @media only screen and (min-width: 768px) {
@@ -179,12 +204,14 @@ button:focus{
   .candidat__title--subtitle{
     width: 40vw;
   }
-  .candidat__actionbutton{
-    margin-top: 3vh;
-    width: auto;
-    font-size: 1.5em;
+  .button{
+    display: none;
+  }
+  .button--form{
+    display: block;
   }
   .form{
+    background-color: #D7D7D7CC;
     display: flex;
     position: static;
     grid-column: 4 / 6;

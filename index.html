@@ -32,11 +32,11 @@
         Robert Biedroń
       </div>
 
-      <div class="candidat__title--subtitle">
+      <div class="candidat__title candidat__title--subtitle">
         "Każdy obywatel Polski powinien mieć dostęp do musików."
       </div>
 
-      <button id="candidat__actionbutton" class="candidat__actionbutton">Dołącz do nas</button>
+      <button id="button" class="button">Dołącz do nas</button>
 
     </section>
     <section id="form" class="form form--hidden magictime">
@@ -44,7 +44,8 @@
       <form>
         <label>Imie <input class="form__text-input" type="text" placeholder="Twoje imie"></label>
         <label>Nazwisko <input class="form__text-input" type="text" placeholder="Twoje nazwisko"></label>
-        <label>Email <input class="form__text-input" type="text" placeholder="Twój email"></label>
+        <label id="email_label">Email <input id="email" class="form__text-input" type="text" placeholder="Twój email"></label>
+        <button id="button--form" type='button' class="button button--form">dołącz</button> 
       </form>
     </section>
   </article>
