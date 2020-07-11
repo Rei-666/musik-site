@@ -129,7 +129,8 @@ button:focus{
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;;
+  align-content: center;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,6 +181,9 @@ button:focus{
 
 
 @media only screen and (min-width: 768px) {
+  .body--noscroll{
+    overflow: auto;
+  }
   .join-us{
     display: grid;
     grid-template-columns: repeat(5, 1fr);

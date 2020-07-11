@@ -1,5 +1,3 @@
-
-
 const btn = document.getElementById("button");
 const x_btn = document.getElementById("form__x-button");
 const email_input = document.getElementById("email");
