@@ -8,6 +8,7 @@ html, body{
   margin: 0;
   width: 100%;
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 .body--noscroll{
   overflow: hidden;
@@ -19,6 +20,9 @@ h1
 button:focus{
   outline: none;
   border: none;
+}
+.grecaptcha-badge{
+  display: none !important;
 }
 .container{
   position: relative;

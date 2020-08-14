@@ -1,10 +1,10 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Musik Plus</title>
   <meta name="description" content="Musik Plus - program socjalny jakiego potrzebujemy">
   <meta name="author" content="Bartosz Gotowski">
   <meta name= viewport content= "width=device-width initial-scale=1.0">
@@ -20,9 +20,9 @@
   <article class="container">
     <h1 class="container__title">94% Polaków nie zjadło dzisiaj <strong>musika.</strong></h1>
 
-    <button class="container__scrolldown"><img class="container__scrolldownimage"src="img/Scroll_down.svg"></button>
+    <a href="#join-us" class="container__scrolldown"><img class="container__scrolldownimage"src="img/Scroll_down.svg"></a>
   </article>
-  <article class="join-us">
+  <article id="join-us" class="join-us">
     <section id="candidat" class="candidat">
       <div class="candidat__image">
         <img class="candidat__image-source" src="img/robercik.jpg">
@@ -42,13 +42,15 @@
     <section id="form" class="form form--hidden magictime">
       <div id="form__x-button" class="form__x-button"></div>
       <form>
-        <label>Imie <input class="form__text-input" type="text" placeholder="Twoje imie"></label>
-        <label>Nazwisko <input class="form__text-input" type="text" placeholder="Twoje nazwisko"></label>
+        <label>Imie <input id="name" class="form__text-input" type="text" placeholder="Twoje imie"></label>
+        <label>Nazwisko <input id="surname" class="form__text-input" type="text" placeholder="Twoje nazwisko"></label>
         <label id="email_label">Email <input id="email" class="form__text-input" type="text" placeholder="Twój email"></label>
         <button id="button--form" type='button' class="button button--form">dołącz</button> 
       </form>
     </section>
   </article>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C"></script>
   <script src="js\main.js"></script>
+  <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 </body>
 </html>
