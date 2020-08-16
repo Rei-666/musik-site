@@ -5,13 +5,17 @@ x_btn.addEventListener("click", hideForm);
 
 const form = document.getElementById("form");
 
-const form_button = document.getElementById("button--form")
-form_button.addEventListener("click", onSubmit)
+const form_message = document.getElementById("form__message");
+const form_button = document.getElementById("button--form");
+const form_error_message = "<p style='color: #f23359'>Błąd</p>";
+form_button.addEventListener("click", onSubmit);
 
-const name_input = document.getElementById("name")
-const surname_input = document.getElementById("surname")
+const name_input = document.getElementById("name");
+const surname_input = document.getElementById("surname");
 const email_input = document.getElementById("email");
 email_input.addEventListener("focusout", validateEmail);
+email_input.addEventListener("input", validateEmail);
+email_input.addEventListener("change", validateEmail);
 
 const x = window.matchMedia("(min-width: 768px)");
 matchWidth(x);
@@ -20,29 +24,43 @@ x.addListener(matchWidth);
 const recaptcha_key='6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C'
 const recaptcha_url='http://192.168.0.100:5000/add_email'
 
-function formSubmit(url, response, redirect, body){
+function formSubmit(url, response_captcha, redirect, body){
 
-  fetch(url+"?response="+response+"&redirect="+redirect, {
-  method: 'POST',
-  body: body
-  })
-  .then(response => response.json())
+  fetch(url+"?response="+response_captcha+"&redirect="+redirect, {method: 'POST', body: body})
+  .then(response => {
+    if (!response.ok) {
+      form_message.innerHTML = form_error_message;
+      stopLoadingButton()
+    }
+    })
   .then(data => {
-  console.log('Success:', data);
+  if(data.success == true){
+    form_message.innerHTML = "Wysłaliśmy Ci email na podany przez Ciebie adres!";
+    stopLoadingButton()
+  }
+  else if (data.success == false){
+    form_message.innerHTML = form_error_message;
+    stopLoadingButton()
+  }
   })
   .catch((error) => {
-  console.error('Error:' + error);
-});
+    form_message.innerHTML = form_error_message;
+    stopLoadingButton()
+  });
+  
 }
 
 function onSubmit(e) {
   e.preventDefault();
+  form_button.setAttribute("content", form_button.innerHTML);
+  form_button.innerHTML = "";
+  form_button.classList.add("loading");
   grecaptcha.ready(
     function() {
     grecaptcha.execute(recaptcha_key, {action: 'submit'}).then(
       function(token){
       var formData = new FormData();
-      redirect = window.location.protocol + "//" + window.location.hostname + "/confirm_email.html";
+      redirect = window.location.protocol + "//" + window.location.hostname + "/confirmed_email.html";
       formData.append("email", email_input.value);
       formData.append("name", name_input.value);
       formData.append("surname", surname_input.value);
@@ -51,6 +69,10 @@ function onSubmit(e) {
     })
   }
 
+function stopLoadingButton(){
+  form_button.classList.remove("loading");
+  form_button.innerHTML = form_button.getAttribute("content");
+}
 
 function formAction(){
   if(window.matchMedia("(min-width: 768px)").matches){
@@ -78,10 +100,11 @@ function validateEmail(){
   var mail_ver = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if(!mail_ver.test(email_input.value.toLowerCase())){
     email_label.classList.add("email--error");
+    form_button.disabled = true;
     }
     else{
       email_label.classList.remove("email--error");
-      console.log("pieseczek i: " + email_input.value.toLowerCase());
+      form_button.disabled = false;
     }
 }
 

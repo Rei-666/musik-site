@@ -20,6 +20,7 @@ a{
 h2{
     font-size: 1.5em;
     margin-bottom: 0px;
+    width: fit-content;
 }
 p{
     margin-top: 5px;
@@ -49,7 +50,7 @@ p{
     text-align: center;
 }
 .welcome_page__title{
-    font-weight: 600;
+    font-weight: bold;
     text-align: center;
     font-size: 1.5em;
 }
@@ -123,10 +124,15 @@ p{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
-    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+.sociale__icons > a{
+    transition: .4s;
+    opacity: 0.6;
+}
+.sociale__icons > a:hover{
+    opacity: 1;
 }
 @media only screen and (min-width: 1300px) {
     .footer__container{

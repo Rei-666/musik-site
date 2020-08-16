@@ -132,10 +132,12 @@ button:focus{
   background-color: #bd4ece;
 }
 .button--form{
-  width: auto;
-  padding-left: 80px;
-  padding-right: 80px;
+  width: 260px;
+  height: 70px;
   margin-top: 60px;
+}
+.button:disabled{
+  opacity: 0.4;
 }
 .form{
   overflow: auto;
@@ -178,6 +180,14 @@ button:focus{
 .form__text-input:focus{
   outline: none;
 }
+.loading{
+  content: "";
+  --height-and-width: 80px;
+  background-image: url("../img/loading.svg");
+  background-repeat: no-repeat;
+  background-size: var(--height-and-width) var(--height-and-width);
+  background-position: center;
+}
 .form__x-button{
   cursor: pointer;
   position: absolute;
@@ -188,6 +198,12 @@ button:focus{
   height: 40px;
   background-repeat: no-repeat;
   background-image: url("../img/X-button.svg");
+}
+.form__message{
+  font-family: Poppins;
+  font-size: 3em;
+  color: black;
+  max-width: 80%;
 }
 .form--hidden{
   display: none;

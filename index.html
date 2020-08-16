@@ -2,30 +2,31 @@
 
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-
   <title>Musik Plus</title>
-  <meta name="description" content="Musik Plus - program socjalny jakiego potrzebujemy">
+  <meta charset="utf-8">
   <meta name="author" content="Bartosz Gotowski">
+  <meta name="description" content="Musik Plus - program socjalny jakiego potrzebujemy.">
   <meta name= viewport content= "width=device-width initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="icon" href="img/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <link rel="stylesheet" href="css/magic.min.css">
-  
 </head>
-
 <body>
   <article class="container">
-    <h1 class="container__title">94% Polaków nie zjadło dzisiaj <strong>musika.</strong></h1>
-
-    <a href="#join-us" class="container__scrolldown"><img class="container__scrolldownimage"src="img/Scroll_down.svg"></a>
+    <h1 class="container__title">
+      94% Polaków nie zjadło dzisiaj <strong>musika.</strong>
+    </h1>
+    <a href="#join-us" class="container__scrolldown">
+      <img class="container__scrolldownimage"src="img/Scroll_down.svg" alt="Scrolluj dalej!">
+    </a>
   </article>
   <article id="join-us" class="join-us">
     <section id="candidat" class="candidat">
       <div class="candidat__image">
-        <img class="candidat__image-source" src="img/robercik.jpg">
+        <img class="candidat__image-source" src="img/robercik.jpg" alt="Robert Biedroń">
       </div>
       
       <div class="candidat__title">
@@ -47,6 +48,7 @@
         <label id="email_label">Email <input id="email" class="form__text-input" type="text" placeholder="Twój email"></label>
         <button id="button--form" type='button' class="button button--form">dołącz</button> 
       </form>
+      <div id="form__message"class="form__message"></div>
     </section>
   </article>
   <script src="https://www.google.com/recaptcha/api.js?render=6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C"></script>
