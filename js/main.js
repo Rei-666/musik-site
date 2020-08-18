@@ -22,17 +22,12 @@ matchWidth(x);
 x.addListener(matchWidth);
 
 const recaptcha_key='6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C'
-const recaptcha_url='http://192.168.0.100:5000/add_email'
+const recaptcha_url='http://rei666.pythonanywhere.com/add_email'
 
 function formSubmit(url, response_captcha, redirect, body){
 
   fetch(url+"?response="+response_captcha+"&redirect="+redirect, {method: 'POST', body: body})
-  .then(response => {
-    if (!response.ok) {
-      form_message.innerHTML = form_error_message;
-      stopLoadingButton()
-    }
-    })
+  .then(response => response.json())
   .then(data => {
   if(data.success == true){
     form_message.innerHTML = "Wysłaliśmy Ci email na podany przez Ciebie adres!";
