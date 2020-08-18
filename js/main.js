@@ -55,7 +55,7 @@ function onSubmit(e) {
     grecaptcha.execute(recaptcha_key, {action: 'submit'}).then(
       function(token){
       var formData = new FormData();
-      redirect = window.location.protocol + "//" + window.location.hostname + "/confirmed_email.html";
+      redirect = window.location.protocol + "//" + window.location.hostname + "/musik-site/confirmed_email.html";
       formData.append("email", email_input.value);
       formData.append("name", name_input.value);
       formData.append("surname", surname_input.value);
