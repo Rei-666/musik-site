@@ -22,7 +22,7 @@ matchWidth(x);
 x.addListener(matchWidth);
 
 const recaptcha_key='6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C'
-const recaptcha_url='http://rei666.pythonanywhere.com/add_email'
+const recaptcha_url='https://rei666.pythonanywhere.com/add_email'
 
 function formSubmit(url, response_captcha, redirect, body){
 
