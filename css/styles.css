@@ -138,6 +138,7 @@ button:focus{
 }
 .button:disabled{
   opacity: 0.4;
+  cursor: default;
 }
 .form{
   overflow: auto;
@@ -211,11 +212,11 @@ button:focus{
 .from--shown{
   display: flex;
 }
-.email--error:after{
+.error:after{
   color: red;
   font-weight: lighter;
   font-size: 1em;
-  content: "Niepoprawny adres email.";
+  content: attr(error_message);
 }
 
 

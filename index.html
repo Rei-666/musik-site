@@ -42,17 +42,18 @@
     </section>
     <section id="form" class="form form--hidden magictime">
       <div id="form__x-button" class="form__x-button"></div>
-      <form>
-        <label>Imie <input id="name" class="form__text-input" type="text" placeholder="Twoje imie"></label>
-        <label>Nazwisko <input id="surname" class="form__text-input" type="text" placeholder="Twoje nazwisko"></label>
-        <label id="email_label">Email <input id="email" class="form__text-input" type="text" placeholder="Twój email"></label>
-        <button id="button--form" type='button' class="button button--form">dołącz</button> 
+      <form id="form__body">
+        <label error_message="Wypełnij to pole">Imie <input id="name" class="form__text-input" type="text" placeholder="Twoje imie" required></label>
+        <label error_message="Wypełnij to pole">Nazwisko <input id="surname" class="form__text-input" type="text" placeholder="Twoje nazwisko" required></label>
+        <label error_message="Niepoprawny adres email"id="email_label">Email <input id="email" class="form__text-input" type="text" placeholder="Twój email" required></label>
+        <button id="button--form" type='submit' class="button button--form">dołącz</button> 
       </form>
       <div id="form__message"class="form__message"></div>
     </section>
   </article>
   <script src="https://www.google.com/recaptcha/api.js?render=6LeWR7sZAAAAAE1f7xS_gfuHpR2GuPwsLnhrqB8C"></script>
-  <script src="js\main.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/error_codes.js"></script>
   <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 </body>
 </html>
